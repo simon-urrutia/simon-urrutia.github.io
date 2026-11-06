@@ -3,219 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio - Simón Urrutia</title>
-    <style>
-        /* Variables de color */
-        :root {
-            --bg-color: #121212;
-            --text-color: #ffffff;
-            --card-bg: #1e1e1e;
-            --accent-color: #00adb5;
-            --card-shadow: rgba(0, 0, 0, 0.5);
-        }
-
-        [data-theme="light"] {
-            --bg-color: #f4f4f9;
-            --text-color: #222831;
-            --card-bg: #ffffff;
-            --accent-color: #007780;
-            --card-shadow: rgba(0, 0, 0, 0.1);
-        }
-
-        /* Estilos Generales */
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            transition: background-color 0.3s, color 0.3s;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
-        }
-
-        header {
-            width: 100%;
-            max-width: 800px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-
-        .theme-btn {
-            background-color: var(--accent-color);
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 20px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: transform 0.2s, background-color 0.3s;
-        }
-
-        .theme-btn:hover {
-            transform: scale(1.05);
-        }
-
-        /* Sección de Perfil */
-        .profile-section {
-            text-align: center;
-            margin: 40px 20px;
-        }
-
-        .profile-section h1 {
-            font-size: 2.5rem;
-            margin-bottom: 5px;
-            color: var(--accent-color);
-        }
-
-        .profile-section p {
-            font-size: 1.2rem;
-            opacity: 0.8;
-        }
-
-        /* Contenedor de Proyectos (Lista vertical) */
-        .projects-container {
-            max-width: 800px;
-            width: 100%;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-
-        .projects-container h2, .skills-section h2 {
-            border-bottom: 2px solid var(--accent-color);
-            padding-bottom: 10px;
-            margin-bottom: 30px;
-        }
-
-        /* Cambiado a flex-direction: column para que vayan una abajo de la otra */
-        .list-vertical {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        /* Tarjetas con Animación */
-        .card {
-            background-color: var(--card-bg);
-            border-radius: 12px;
-            padding: 25px;
-            box-shadow: 0 4px 6px var(--card-shadow);
-            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s;
-            border: 1px solid transparent;
-        }
-
-        .card:hover {
-            transform: translateY(-5px); /* Se eleva un poquito menos al ser una lista */
-            box-shadow: 0 8px 15px var(--card-shadow);
-            border-color: var(--accent-color);
-        }
-
-        .card h3 {
-            margin-top: 0;
-            color: var(--accent-color);
-        }
-
-        .card p {
-            font-size: 0.95rem;
-            line-height: 1.5;
-            opacity: 0.8;
-        }
-
-        /* Sección de Tecnologías */
-        .skills-section {
-            max-width: 800px;
-            width: 100%;
-            padding: 20px;
-            box-sizing: border-box;
-            margin-bottom: 50px;
-        }
-
-        .logos-container {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            margin-top: 20px;
-        }
-
-        .tech-logo {
-            width: 65px;
-            height: 65px;
-            object-fit: contain;
-            transition: transform 0.3s ease;
-        }
-
-        /* Animación suave para los logos cuando pasas el mouse */
-        .tech-logo:hover {
-            transform: scale(1.2) rotate(5deg);
-        }
-    </style>
+    <title>Portafolio | Simón Urrutia</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-        <div class="logo">💻 Mi Portafolio</div>
-        <button class="theme-btn" id="themeToggle">Cambiar Modo</button>
+    <!-- El botón de cambio de modo -->
+    <button id="theme-toggle" class="theme-btn">🌙 Modo Oscuro</button>
+
+    <header class="hero">
+        <h1>Simón Urrutia</h1>
+        <a href="https://github.com" target="_blank" class="github-link">Mi GitHub</a>
     </header>
 
-    <main>
-        <section class="profile-section">
-            <h1>Simón Urrutia</h1>
-            <p>¡Hola! Tengo 15 años y soy programador en desarrollo. Bienvenido a mi espacio digital.</p>
-        </section>
-
-        <section class="projects-container">
-            <h2>Mis Proyectos</h2>
-            <div class="list-vertical">
-                
-                <div class="card">
-                    <h3>Proyecto 1</h3>
-                    <p>Espacio reservado para tu primer gran proyecto. ¡Pronto estará listo para mostrarse al mundo!</p>
-                </div>
-
-                <div class="card">
-                    <h3>Proyecto 2</h3>
-                    <p>Acá vas a poder meter tu segundo software, página web o videojuego que programes.</p>
-                </div>
-
-                <div class="card">
-                    <h3>Proyecto 3</h3>
-                    <p>¡Un tercer lugar listo para cuando la lista de ideas empiece a crecer!</p>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Nueva sección de lenguajes al final -->
-        <section class="skills-section">
-            <h2>Tecnologías que domino</h2>
-            <div class="logos-container">
-                <!-- Logo de HTML5 -->
-                <img class="tech-logo" src="https://jsdelivr.net" alt="HTML5">
-                <!-- Logo de CSS3 -->
-                <img class="tech-logo" src="https://jsdelivr.net" alt="CSS3">
-                <!-- Logo de JavaScript -->
-                <img class="tech-logo" src="https://jsdelivr.net" alt="JavaScript">
-            </div>
-        </section>
+    <main class="projects-container">
+        <div class="card">
+            <h2>Proyecto 1</h2>
+        </div>
+        <div class="card">
+            <h2>Proyecto 2</h2>
+        </div>
+        <div class="card">
+            <h2>Proyecto 3</h2>
+        </div>
     </main>
 
-    <script>
-        const toggleBtn = document.getElementById('themeToggle');
-        
-        toggleBtn.addEventListener('click', () => {
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            
-            if (currentTheme === 'light') {
-                document.documentElement.removeAttribute('data-theme');
-            } else {
-                document.documentElement.setAttribute('data-theme', 'light');
-            }
-        });
-    </script>
+        <!-- Sección de Tecnologías con Logos (Enlaces Corregidos y Estables) -->
+    <footer class="tech-section">
+        <div class="logos-container">
+            <!-- Logo de HTML5 -->
+            <img src="https://githubusercontent.com" alt="HTML5">
+            <!-- Logo de CSS3 -->
+            <img src="https://githubusercontent.com" alt="CSS3">
+            <!-- Logo de JavaScript -->
+            <img src="https://githubusercontent.com" alt="JavaScript">
+        </div>
+    </footer>
+
+
+    <!-- Conectamos con el archivo de la lógica del botón -->
+    <script src="script.js"></script>
+
 </body>
 </html>

@@ -1,139 +1,144 @@
+/* Paleta de colores ajustables */
 :root {
-    --bg-color: #121212;
-    --text-color: #ffffff;
-    --card-bg: #1e1e1e;
-    --accent-color: #00adb5;
-    --card-shadow: rgba(0, 0, 0, 0.5);
+    --bg-color: #f4f7f6;
+    --text-color: #333333;
+    --title-color: #1a1a1a;
+    --card-bg: #ffffff;
+    --card-border: #e0e0e0;
+    --card-hover-border: #0066cc;
+    --link-color: #0066cc;
+    --btn-bg: #1a1a1a;
+    --btn-text: #ffffff;
 }
 
-[data-theme="light"] {
-    --bg-color: #f4f4f9;
-    --text-color: #222831;
-    --card-bg: #ffffff;
-    --accent-color: #007780;
-    --card-shadow: rgba(0, 0, 0, 0.1);
+body.dark-mode {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --title-color: #ffffff;
+    --card-bg: #1e1e1e;
+    --card-border: #333333;
+    --card-hover-border: #00ffcc;
+    --link-color: #00ffcc;
+    --btn-bg: #ffffff;
+    --btn-text: #121212;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
 
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 0;
-    transition: background-color 0.3s, color 0.3s;
     display: flex;
     flex-direction: column;
     align-items: center;
     min-height: 100vh;
+    padding: 40px 20px;
+    position: relative;
 }
 
-header {
-    width: 100%;
-    max-width: 800px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    box-sizing: border-box;
-}
-
+/* Diseño del Botón Flotante */
 .theme-btn {
-    background-color: var(--accent-color);
-    color: white;
-    border: none;
+    position: absolute;
+    top: 20px;
+    right: 20px;
     padding: 10px 20px;
+    border: none;
     border-radius: 20px;
-    cursor: pointer;
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
     font-weight: bold;
-    transition: transform 0.2s, background-color 0.3s;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 .theme-btn:hover {
     transform: scale(1.05);
 }
 
-.profile-section {
+.hero {
     text-align: center;
-    margin: 40px 20px;
+    margin-top: 60px;
+    margin-bottom: 40px;
 }
 
-.profile-section h1 {
-    font-size: 2.5rem;
-    margin-bottom: 5px;
-    color: var(--accent-color);
+.hero h1 {
+    font-size: 3rem;
+    color: var(--title-color);
+    margin-bottom: 10px;
 }
 
-.profile-section p {
+.hero .github-link {
     font-size: 1.2rem;
-    opacity: 0.8;
-}
-
-/* Estilos para el enlace de GitHub */
-.github-link-container {
-    margin-top: 15px;
-}
-
-.github-link {
-    color: var(--accent-color);
+    color: var(--link-color);
     text-decoration: none;
     font-weight: bold;
-    font-size: 1.1rem;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    transition: transform 0.2s;
 }
 
-.github-link:hover {
-    transform: scale(1.05);
-}
-
-.github-link svg {
-    fill: currentColor;
+.hero .github-link:hover {
+    text-decoration: underline;
 }
 
 .projects-container {
-    max-width: 800px;
-    width: 100%;
-    padding: 20px;
-    box-sizing: border-box;
-    margin-bottom: 50px;
-}
-
-.projects-container h2 {
-    border-bottom: 2px solid var(--accent-color);
-    padding-bottom: 10px;
-    margin-bottom: 30px;
-}
-
-.list-vertical {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 50px;
 }
 
+/* Tarjetas y sus animaciones */
 .card {
     background-color: var(--card-bg);
-    border-radius: 12px;
-    padding: 25px;
-    box-shadow: 0 4px 6px var(--card-shadow);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s;
-    border: 1px solid transparent;
+    border: 2px solid var(--card-border);
+    border-radius: 10px;
+    padding: 40px 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; 
 }
 
 .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 15px var(--card-shadow);
-    border-color: var(--accent-color);
+    transform: translateY(-8px);
+    border-color: var(--card-hover-border);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
 }
 
-.card h3 {
-    margin-top: 0;
-    color: var(--accent-color);
+.card h2 {
+    font-size: 2rem;
+    color: var(--text-color);
 }
 
-.card p {
-    font-size: 0.95rem;
-    line-height: 1.5;
-    opacity: 0.8;
+.tech-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: auto;
+}
+
+.logos-container {
+    display: flex;
+    gap: 30px;
+    background-color: var(--card-bg);
+    padding: 15px 30px;
+    border-radius: 50px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    border: 1px solid var(--card-border);
+}
+
+.logos-container img {
+    width: 50px;
+    height: 50px;
+    transition: transform 0.2s;
+}
+
+.logos-container img:hover {
+    transform: scale(1.2);
 }
