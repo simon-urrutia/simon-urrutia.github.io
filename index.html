@@ -3,46 +3,226 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio | Simón Urrutia</title>
+    <title>Simón Urrutia | Frontend & Web Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <!-- El botón de cambio de modo -->
-    <button id="theme-toggle" class="theme-btn">🌙 Modo Oscuro</button>
-
-    <header class="hero">
-        <h1>Simón Urrutia</h1>
-        <a href="https://github.com" target="_blank" class="github-link">Mi GitHub</a>
+    <!-- Barra de Navegación -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <span class="logo-bracket">&lt;</span>Simón<span class="logo-accent">Urrutia</span><span class="logo-bracket">/&gt;</span>
+            </a>
+            <nav class="nav-links" id="navLinks">
+                <a href="#proyectos">Proyectos</a>
+                <a href="#simulador">Live Demo</a>
+                <a href="#habilidades">Stack</a>
+                <a href="#sobre-mi">Sobre Mí</a>
+                <a href="#contacto" class="nav-cta">Contactar</a>
+            </nav>
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
+        </div>
     </header>
 
-    <main class="projects-container">
-        <div class="card">
-            <h2>Proyecto 1</h2>
-        </div>
-        <div class="card">
-            <h2>Proyecto 2</h2>
-        </div>
-        <div class="card">
-            <h2>Proyecto 3</h2>
-        </div>
-    </main>
+    <main>
+        <!-- Sección Hero -->
+        <section class="hero">
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <div class="status-pill">
+                        <span class="pulse-dot"></span> Disponible para nuevos proyectos freelance
+                    </div>
+                    <h1>Construyo aplicaciones web rápidas que <span class="gradient-text">resuelven problemas reales</span>.</h1>
+                    <p class="hero-subtitle">
+                        Desarrollador Frontend especializado en JavaScript Vanilla, arquitecturas de alto rendimiento en el navegador y herramientas de gestión a medida que reemplazan planillas lentas por interfaces instantáneas.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#proyectos" class="btn btn-primary">🚀 Ver Caso de Estudio</a>
+                        <a href="https://github.com/simon-urrutia" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">💻 Perfil de GitHub</a>
+                    </div>
+                    <div class="hero-metrics">
+                        <div class="metric">
+                            <span class="metric-num">7.000+</span>
+                            <span class="metric-label">Filas a 60 FPS</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-num">0</span>
+                            <span class="metric-label">Dependencias externas</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-num">100%</span>
+                            <span class="metric-label">Código a medida</span>
+                        </div>
+                    </div>
+                </div>
 
-        <!-- Sección de Tecnologías con Logos (Enlaces Corregidos y Estables) -->
-    <footer class="tech-section">
-        <div class="logos-container">
-            <!-- Logo de HTML5 -->
-            <img src="https://githubusercontent.com" alt="HTML5">
-            <!-- Logo de CSS3 -->
-            <img src="https://githubusercontent.com" alt="CSS3">
-            <!-- Logo de JavaScript -->
-            <img src="https://githubusercontent.com" alt="JavaScript">
-        </div>
-    </footer>
+                <!-- Tarjeta tipo Terminal / Código -->
+                <div class="hero-terminal">
+                    <div class="terminal-header">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                        <span class="terminal-title">stockgenio_engine.js — Visual Studio Code</span>
+                    </div>
+                    <pre class="terminal-body"><code><span class="c-keyword">const</span> <span class="c-var">developer</span> = {
+  nombre: <span class="c-str">"Simón Urrutia"</span>,
+  enfoque: <span class="c-str">"Rendimiento &amp; Productividad"</span>,
+  stack: [<span class="c-str">"HTML5"</span>, <span class="c-str">"CSS3"</span>, <span class="c-str">"JavaScript ES6+"</span>],
+  proyectoDestacado: {
+    nombre: <span class="c-str">"StockGenio SPA"</span>,
+    arquitectura: <span class="c-str">"Virtual Scrolling + Delegación DOM"</span>,
+    capacidad: <span class="c-num">7000</span>,
+    latencia: <span class="c-str">"&lt; 16ms (60 FPS)"</span>
+  }
+};</code></pre>
+                </div>
+            </div>
+        </section>
 
+        <!-- Proyecto Destacado: StockGenio -->
+        <section id="proyectos" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">PROYECTO COMERCIAL EN PRODUCCIÓN</span>
+                    <h2>✨ StockGenio — Sistema de Inventario y Precios</h2>
+                    <p>Aplicación web Single Page Application (SPA) creada desde cero para superar los cuellos de botella de rendimiento de las hojas de cálculo tradicionales.</p>
+                </div>
 
-    <!-- Conectamos con el archivo de la lógica del botón -->
-    <script src="script.js"></script>
+                <div class="project-showcase">
+                    <div class="project-info">
+                        <h3>El Desafío y la Solución de Ingeniería</h3>
+                        <p>
+                            El cliente operaba con miles de artículos y sufría bloqueos constantes al filtrar o calcular precios en hojas convencionales. Diseñé y programé una grilla web con <strong>Virtual Scrolling</strong> que renderiza únicamente los nodos visibles en pantalla, manteniendo más de 7.000 registros activos en memoria con respuesta inmediata.
+                        </p>
 
-</body>
-</html>
+                        <ul class="feature-list">
+                            <li>
+                                <strong>⚡ Motor de Virtual Scrolling:</strong> Desplazamiento fluido a 60 FPS gestionando decenas de miles de celdas mediante un único listener de eventos delegados.
+                            </li>
+                            <li>
+                                <strong>🧮 Intérprete de Fórmulas en Lenguaje Natural:</strong> Permite escribir tanto <code>10 + 10</code> como <code>10 mas 10</code> o <code>100 menos 20</code>, actualizando el stock y el precio efectivo al instante.
+                            </li>
+                            <li>
+                                <strong>🛡️ Portapapeles Matricial Sanitizado:</strong> Copiado y pegado de bloques múltiples compatible con Excel, limpiando etiquetas HTML anidadas para evitar roturas de diseño o inyecciones XSS.
+                            </li>
+                            <li>
+                                <strong>↩️ Historial de Estados (Ctrl+Z) y Multiusuario:</strong> Pila de deshacer en memoria y persistencia automática en <code>localStorage</code> protegida por sesión de usuario.
+                            </li>
+                        </ul>
+
+                        <div class="project-links">
+                            <a href="https://simon-urrutia.github.io/stockgenio-web/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                                🌐 Abrir Demo en Vivo
+                            </a>
+                            <a href="https://github.com/simon-urrutia/stockgenio-web" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                                📂 Ver Código en GitHub
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Simulador Interactivo del Motor de StockGenio -->
+                    <div id="simulador" class="simulator-card">
+                        <div class="sim-header">
+                            <span class="sim-badge">⚙️ Probá el motor en vivo</span>
+                            <h4>Simulador de Fórmulas de StockGenio</h4>
+                            <p>Escribí una operación con palabras o signos (ej: <code>15 mas 10</code> o <code>50 * 2</code>) para probar cómo responde la planilla real:</p>
+                        </div>
+
+                        <div class="sim-grid">
+                            <div class="sim-field">
+                                <label for="simComprada">Cantidad Comprada (acepta fórmula)</label>
+                                <input type="text" id="simComprada" value="20 mas 15" placeholder="Ej: 10 mas 10">
+                                <span class="sim-resolved">Resuelto: <strong id="resComprada">35</strong> u.</span>
+                            </div>
+
+                            <div class="sim-field">
+                                <label for="simVendida">Cantidad Vendida (acepta fórmula)</label>
+                                <input type="text" id="simVendida" value="5 mas 2" placeholder="Ej: 5">
+                                <span class="sim-resolved">Resuelto: <strong id="resVendida">7</strong> u.</span>
+                            </div>
+
+                            <div class="sim-field">
+                                <label for="simPrecioLista">Precio de Lista ($)</label>
+                                <input type="text" id="simPrecioLista" value="10000 mas 5000" placeholder="Ej: 12000">
+                                <span class="sim-resolved">Formateado: <strong id="resLista">$15.000</strong></span>
+                            </div>
+
+                            <div class="sim-field">
+                                <label for="simPorcentaje">Ajuste Precio Efectivo (%)</label>
+                                <input type="number" id="simPorcentaje" value="80" min="1" max="200">
+                                <span class="sim-resolved">Configurable con la tuerca ⚙️</span>
+                            </div>
+                        </div>
+
+                        <div id="simResultBox" class="sim-results">
+                            <div class="sim-result-item">
+                                <span>📦 Stock Calculado:</span>
+                                <strong id="simStockFinal">28 unidades</strong>
+                            </div>
+                            <div class="sim-result-item">
+                                <span>💵 Precio Efectivo:</span>
+                                <strong id="simEfectivoFinal">$12.000</strong>
+                            </div>
+                        </div>
+                        <p id="simStockAlert" class="sim-alert hidden">🚨 ¡Stock en 0 o negativo! En StockGenio toda esta fila se pinta automáticamente de rojo.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Habilidades y Stack -->
+        <section id="habilidades" class="section section-alt">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">HERRAMIENTAS &amp; TECNOLOGÍAS</span>
+                    <h2>Stack Técnico</h2>
+                    <p>Enfoque en fundamentos sólidos, código limpio sin sobreingeniería y velocidad de carga inmediata.</p>
+                </div>
+
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <div class="skill-icon">⚡</div>
+                        <h3>JavaScript (ES6+) &amp; Lógica</h3>
+                        <p>Manipulación avanzada del DOM, delegación de eventos, Virtual Scrolling, estructuras de datos en memoria, expresiones regulares y almacenamiento local.</p>
+                    </div>
+
+                    <div class="skill-card">
+                        <div class="skill-icon">🎨</div>
+                        <h3>HTML5 &amp; CSS3 Moderno</h3>
+                        <p>Maquetación semántica, CSS Grid, Flexbox, variables nativas, interfaces responsivas y diseño enfocado en la comodidad de uso durante largas jornadas.</p>
+                    </div>
+
+                    <div class="skill-card">
+                        <div class="skill-icon">🛠️</div>
+                        <h3>Entorno &amp; Flujo Profesional</h3>
+                        <p>Desarrollo en Windows con Visual Studio Code, control de versiones en Git, despliegue continuo con GitHub Pages y trato directo con requerimientos de clientes.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sobre Mí -->
+        <section id="sobre-mi" class="section">
+            <div class="container about-container">
+                <div class="about-card">
+                    <span class="section-tag">MI ENFOQUE</span>
+                    <h2>Sobre Mí</h2>
+                    <p>
+                        Soy <strong>Simón Urrutia</strong>, desarrollador web con mentalidad analítica y foco en la economía y gestión de los negocios. Me apasiona transformar procesos manuales o planillas sobrecargadas en software web ágil, intuitivo y fácil de mantener.
+                    </p>
+                    <p>
+                        Cuando trabajo con un cliente, no me limito a escribir código: escucho cómo opera su negocio en el día a día, propongo mejoras reales de velocidad y entrego productos listos para usar desde el navegador sin instalaciones complicadas.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contacto -->
+        <section id="contacto" class="section section-alt">
+            <div class="container contact-container">
+                <span class="section-tag">¿TENÉS UNA IDEA O NEGOCIO?</span>
+                <h2>Hablemos de tu próximo proyecto</h2>
+                <p>Si necesitás una herramienta web a medida, optimizar
